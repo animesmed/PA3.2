@@ -38,7 +38,7 @@ public class Lista extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        //
         // Add a marker in Cusco and move the camera
         LatLng Ubi1 = new LatLng(-13.516994006035379, -71.98009095351105);
         mMap.addMarker(new MarkerOptions().position(Ubi1).title("Marker in Cusco"));
