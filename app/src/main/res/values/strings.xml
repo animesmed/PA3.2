@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PA2_Estacio_Condori</string>
+    <string name="tv_Bienvenida">Bienvenido</string>
+    <string name="title_activity_lista">Lista</string>
+</resources>
