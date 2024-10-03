@@ -44,14 +44,13 @@ public class Lista extends FragmentActivity implements OnMapReadyCallback, View.
         Lugar1 = new LatLng(-13.516994006035379, -71.98009095351105);
         btnUser1 = findViewById(R.id.btnUser1);
 
-
         //ubicacion segundo alumno
         Lugar2 = new LatLng(-13.526706939517446, -71.97117890421889);
         btnUser2 = findViewById(R.id.btnUser2);
 
         //Llamadas de botones
-        btnUser1.setOnClickListener(this);
-        btnUser2.setOnClickListener(this);
+        btnUser1.setOnClickListener(view -> MoverseA(Lugar1));
+        btnUser2.setOnClickListener(view -> MoverseA(Lugar2));
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -114,7 +113,13 @@ public class Lista extends FragmentActivity implements OnMapReadyCallback, View.
         }));
 
     }
-
+    private View.OnClickListener MoverseA(LatLng direccion){
+        mMap.addMarker(new MarkerOptions().position(direccion).title("Marker in Cusco"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(direccion));
+        CameraPosition cameraPosition = CameraPosition.builder().target(direccion).zoom(16).build();
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        return null;
+    }
     private void obtenerUbicacion() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
