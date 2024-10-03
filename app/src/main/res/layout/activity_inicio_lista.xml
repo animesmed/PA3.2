@@ -8,12 +8,24 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".Inicio_Lista">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:gravity="clip_horizontal"
+        android:text="Annie Melissa Estacio Medrano" />
 
     <TextView
         android:text="@string/tv_Bienvenida"
-        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
